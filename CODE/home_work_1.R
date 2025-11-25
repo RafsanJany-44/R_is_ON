@@ -16,6 +16,37 @@ wilcox.test(WBC ~ group, data=stroke_CI)
 
 
 
+
+# Boxplot (CI vs Normal)
+boxplot(WBC ~ group, data = stroke_CI,
+        main = "WBC Distribution by Group",
+        xlab = "Group",
+        ylab = "WBC")
+
+# Histogram for Normal group
+hist(stroke_CI$WBC[stroke_CI$group == 0],
+     main = "Histogram of WBC - Normal Group (0)",
+     xlab = "WBC",
+     col = "orange",
+     breaks = 20)
+
+# Histogram for CI group
+hist(stroke_CI$WBC[stroke_CI$group == 1],
+     main = "Histogram of WBC - CI Group (1)",
+     xlab = "WBC",
+     col = "orange",
+     breaks = 20)
+
+
+qqnorm(stroke_CI$WBC[stroke_CI$group == 0])
+qqline(stroke_CI$WBC[stroke_CI$group == 0], col="red")
+
+qqnorm(stroke_CI$WBC[stroke_CI$group == 1])
+qqline(stroke_CI$WBC[stroke_CI$group == 1], col="red")
+
+
+
+
 # Output interpretations:
 # Results (Shapiro-Wilk, F-test, t-tests, Wilcoxon) — pasted as comments
 # Shapiro-Wilk normality test
