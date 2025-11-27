@@ -336,10 +336,8 @@ sd(dat$weight,   na.rm = TRUE)
 hist(dat$weight, breaks = 20, main = "Histogram of Body Weight", xlab = "Weight (kg)")
 
 # QQ plot
- 
+ qqnorm(dat$weight);qqline(dat$weight,col = 2)
 
-
-# Shapiro–Wilk test (normality test)
 
 
 # 3. One-sample t-test (H₀: μ = 60 vs H₁: μ > 60)
