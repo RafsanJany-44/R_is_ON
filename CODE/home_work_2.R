@@ -54,4 +54,3 @@ kruskal.test(Hct ~ smoking, data = dat_CI)
 
 
 dunnTest(Hct ~ smoking, data = dat_CI, method = "bonferroni")
-
